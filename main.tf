@@ -1,13 +1,7 @@
-# create vpc
-# terraform aws create vpc
-resource "aws_vpc" "my-vpc" {
-  cidr_block              = "10.0.0.0/16"
-  instance_tenancy        = "default"
-  enable_dns_hostnames    = true
-
-  tags      = {
-    Name    = "mydemo-vpc1"
+resource "aws_instance" "MyInstance" {
+  ami           = "ami-02dfbd4ff395f2a1b"
+  instance_type = "t3.micro"
+  tags = {
+    name = "server1"
   }
 }
-
-
